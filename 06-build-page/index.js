@@ -108,7 +108,7 @@ function createAssetsCopy(directProject){
                     let valFile = file;
                     if (valFile.isFile()){
                         fsP.copyFile(`${catalogOrigin}\\${valFile.name}`, `${catalogCopy}\\${valFile.name}`);
-                        stdout.write(`\nФайл в папку ${catalogCopy} записан: ${valFile.name}`);
+                        // stdout.write(`\nФайл в папку ${catalogCopy} записан: ${valFile.name}`);
                     } else{
                         fs.mkdir(`${catalogCopy}\\${valFile.name}`, {recursive: true}, (err, direct) => {
                             if (err) {throw err}
@@ -165,8 +165,8 @@ function createAssetsCopy(directProject){
                             }
                         }
                     }
-                // Копирование файлов из оригинальной директории, которых нет в новой
-                    //создание массива наименований файлов и директорий новой папки assets
+                    // Копирование файлов из оригинальной директории, которых нет в новой
+                    // Cоздание массива наименований файлов и директорий новой папки assets
                     let arrFileNameCopy = [];
 
                     for (let i = 0; i < filesAssetsCopy.length; i++){

@@ -1,6 +1,6 @@
 const fs = require('fs/promises');
 const path = require('path');
-const { stdin, stdout, exit } = process;
+const { stdout, exit } = process;
 
 
 stdout.write('\nФайлы папки \'\\secret-folder\':\n\n');
@@ -27,3 +27,7 @@ files.then((value) => {
         }
     }
 });
+
+process.on('exit', () => stdout.write('\nПрограмма завершена.\n\n'));
+process.on('error', error => console.log('Error', error.message));
+process.on('SIGINT', () => exit());

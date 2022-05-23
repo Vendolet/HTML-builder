@@ -66,7 +66,7 @@ function copyDir(root, source, dest){
     })
 }
 
-process.on('exit', () => stdout.write('\nКопирование завершено.\n\n'));
+process.on('exit', () => stdout.write('\nКлонирование завершено.\n\n'));
 process.on('error', error => console.log('Error', error.message));
 
 copyDir(rootDirect, srcFolder, destFolder);

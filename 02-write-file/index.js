@@ -18,5 +18,7 @@ stdin.on('data', data => {
         output.write(`${strData}\n`);
     }
 });
-process.on('exit', () => stdout.write('\nПрограмма завершена.\n'));
+
+process.on('exit', () => stdout.write('\nПрограмма завершена.\n\n'));
 process.on('error', error => console.log('Error', error.message));
+process.on('SIGINT', () => exit());
